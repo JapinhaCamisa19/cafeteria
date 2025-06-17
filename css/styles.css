@@ -1,0 +1,460 @@
+:root {
+    font-size: 10px;
+    --main-color: #d3ad7f;
+    --black: #131313;
+    --bg: #010103;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+
+/* Reset + tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+}
+
+section {
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Vídeo de fundo */
+.caixa-video {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.caixa-video video {
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.mascara {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+}
+
+/* Cabeçalho */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: var(--bg);
+    border-bottom: var(--border);
+    width: 100vw;
+}
+
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    padding: 1.5rem 0;
+}
+
+/* Logo */
+.header section a img {
+    height: 6rem;
+}
+
+/* Navegação */
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: #fff;
+    transition: 0.4s linear;
+    text-decoration: none;
+
+}
+
+.nav-links a:hover {
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color);
+    padding-bottom: 0.5rem;
+}
+
+/* Botão hambúrguer (escondido no desktop) */
+.menu-toggle {
+    display: none;
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Hero */
+.caixa-principal {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.caixa-principal div {
+    max-width: 60rem;
+}
+
+.caixa-principal div h3 {
+    color: #fff;
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+
+.caixa-principal div p {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: lighter;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+.botao-link {
+    background: var(--main-color);
+    cursor: pointer;
+    margin-top: 2rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    padding: 1rem 3rem;
+    border: none;
+    transition: 0.3s linear;
+    text-decoration: none;
+}
+
+.botao-link:hover {
+    letter-spacing: 0.1rem;
+}
+
+/* Títulos */
+.titulo {
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 2rem;
+}
+
+.titulo span {
+    color: var(--main-color);
+}
+
+/* Sobre */
+.caixa-sobre .sobre-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.caixa-sobre .sobre-container .sobre-imagem,
+.caixa-sobre .sobre-container .sobre-texto {
+    flex: 1 1 45rem;
+}
+
+.caixa-sobre .sobre-container .sobre-imagem img {
+    width: 100%;
+}
+
+.caixa-sobre .sobre-container .sobre-texto h3 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.caixa-sobre .sobre-container .sobre-texto p {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: #fff;
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+/*.modal{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    background-color: transparent;*/
+/*    gap: 20px;*/
+/*    z-index: 4;*/
+/*    position: fixed;*/
+/*    top: 50%;*/
+/*    left:-30%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    transition: left 1s linear;*/
+/*}*/
+.ad{
+    display: flex;
+    flex-direction: column;
+    background-color:transparent;
+    gap: 20px;
+    z-index: 4;
+    position: fixed;
+    top: 50%;
+    left: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.mascara-modal {
+    visibility: hidden;
+    z-index: 3;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+}
+
+.caixa-avaliacoes {
+    background-color: var(--black);
+    padding: 4rem 2rem;
+}
+
+.avaliacoes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.avaliacao {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: var(--border);
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 30rem;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.avaliacao:hover {
+    transform: translateY(-5px);
+}
+
+.avaliacao img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 2px solid var(--main-color);
+}
+
+.avaliacao p {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.avaliacao h4 {
+    font-size: 1.4rem;
+    color: var(--main-color);
+}
+
+.cart-icon {
+    display: flex;
+    margin-left: auto;
+    color: #fff;
+}
+.caixa-produtos {
+    background-color: var(--black);
+    padding: 4rem 2rem;
+    color: #fff;
+}
+
+.produtos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.produto {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: var(--border);
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 30rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+}
+
+.produto img {
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.produto h3 {
+    font-size: 2rem;
+    color: var(--main-color);
+    margin-bottom: 0.5rem;
+}
+
+.produto p {
+    font-size: 1.4rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.produto span {
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+
+/* ===============================================================
+   BLOCO DE RESPONSIVIDADE – copie‑e‑cole no final do seu styles.css
+   =============================================================== */
+
+/* Tablets médios (≤ 992 px) */
+@media (max-width: 992px) {
+
+    /* Espaçamento no cabeçalho */
+    .header section {
+        gap: 2rem;
+    }
+}
+
+/* Celulares e tablets pequenos (≤ 768 px) */
+@media (max-width: 768px) {
+
+    /* ---------- HEADER & MENU HAMBÚRGUER ---------- */
+    .menu-toggle {
+        display: block;               /* exibe o ícone ☰ */
+        font-size: 3rem;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: var(--bg);
+        overflow: hidden;
+        max-height: 0;                /* menu fechado */
+        transition: max-height 0.5s ease-in-out;
+    }
+
+    .nav-links a {
+        margin: 1rem 0;
+        font-size: 1.5rem;
+    }
+
+    .nav-links.active {
+        max-height: 30rem;            /* menu aberto – valor alto p/ caber os links */
+    }
+
+    .header section {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    /* ---------- HERO ---------- */
+    .caixa-principal {
+        padding-top: 8rem;            /* evita sobrepor o header fixo */
+    }
+
+    .caixa-principal div h3 {
+        font-size: 3.5rem;
+    }
+
+    .caixa-principal div p {
+        font-size: 1.6rem;
+    }
+
+    .botao-link {
+        font-size: 1.5rem;
+        padding: 0.8rem 2rem;
+    }
+
+    /* ---------- TÍTULOS ---------- */
+    .titulo {
+        font-size: 3rem;
+    }
+
+    /* ---------- SOBRE ---------- */
+    .caixa-sobre .sobre-container {
+        flex-direction: column;
+    }
+
+    /* ---------- MODAL ENDEREÇO ---------- */
+    .ad {
+        top: 50%;
+        left: -55%;
+        transform: translate(-65%, -65%);
+        max-width: 600px;
+    }
+
+    .ad iframe {
+        width: 100%;
+        height: auto;
+        border: none;
+    }
+
+    /* ---------- VÍDEO DE FUNDO ---------- */
+    .caixa-video video {
+        object-fit: cover;
+    }
+
+    /* ---------- SECTION PADDING ---------- */
+    section {
+         padding: 2rem 1rem;
+     }
+
+    /* ---------- FOOTER ---------- */
+    footer .list-inline {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    footer p,
+    footer a {
+        font-size: 1.3rem;
+    }
+    .caixa-sobre .sobre-container .sobre-imagem,
+    .caixa-sobre .sobre-container .sobre-texto {
+        flex: 1 1 30rem;
+    }
+}
+
+/* Dispositivos muito estreitos (≤ 576 px) */
+@media (max-width: 576px) {
+
+    .caixa-principal div h3 {
+        font-size: 2.8rem;
+    }
+
+    .caixa-principal div p {
+        font-size: 1.4rem;
+    }
+}
+
+
