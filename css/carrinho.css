@@ -138,13 +138,10 @@ section {
 }
 
 
-
-
-
-
 .cart-icon {
     display: flex;
-    margin-left: auto;
+    justify-content: center;
+    align-items: center;
     color: #fff;
 }
 .caixa-produtos {
@@ -508,39 +505,138 @@ h1, h2 {
     box-shadow: 0 9px 25px rgba(185, 145, 98, 0.9);
 }
 
-/* ------------------------ */
-/* RESPONSIVO              */
-/* ------------------------ */
-@media (max-width: 720px) {
-    .nav-links {
-        position: fixed;
-        top: 75px;
-        left: 0;
-        background: #1f1f1f;
-        width: 100%;
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px 0;
-        transform: translateY(-500px);
-        transition: transform 0.4s ease;
-        z-index: 999;
-    }
-    .nav-links.active {
-        transform: translateY(0);
-    }
-    .nav-links a {
-        font-size: 1.5rem;
-        padding: 10px 0;
-        text-align: center;
-        border-bottom: 1px solid #333;
-    }
-    .menu-toggle {
-        display: block;
-    }
+/* Tablets médios (≤ 992 px) */
+@media (max-width: 992px) {
+
+    /* Espaçamento no cabeçalho */
     .header section {
-        justify-content: space-between;
-    }
-    #produtos, #destaques {
-        justify-content: center;
+        gap: 2rem;
     }
 }
+
+/* Celulares e tablets pequenos (≤ 768 px) */
+@media (max-width: 768px) {
+
+    /* ---------- HEADER & MENU HAMBÚRGUER ---------- */
+    .menu-toggle {
+        display: block;               /* exibe o ícone ☰ */
+        font-size: 3rem;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: var(--bg);
+        overflow: hidden;
+        max-height: 0;                /* menu fechado */
+        transition: max-height 0.5s ease-in-out;
+    }
+
+    .nav-links a {
+        margin: 1rem 0;
+        font-size: 1.5rem;
+    }
+
+    .nav-links.active {
+        max-height: 30rem;            /* menu aberto – valor alto p/ caber os links */
+    }
+
+    .header section {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    /* ---------- HERO ---------- */
+    .caixa-principal {
+        padding-top: 8rem;            /* evita sobrepor o header fixo */
+    }
+
+    .caixa-principal div h3 {
+        font-size: 3.5rem;
+    }
+
+    .caixa-principal div p {
+        font-size: 1.6rem;
+    }
+
+    .botao-link {
+        font-size: 1.5rem;
+        padding: 0.8rem 2rem;
+    }
+
+    /* ---------- TÍTULOS ---------- */
+    .titulo {
+        font-size: 3rem;
+    }
+
+    /* ---------- SOBRE ---------- */
+    .caixa-sobre .sobre-container {
+        flex-direction: column;
+    }
+
+    /* ---------- MODAL ENDEREÇO ---------- */
+    .ad {
+        top: 50%;
+        left: -55%;
+        transform: translate(-65%, -65%);
+        max-width: 600px;
+    }
+
+    .ad iframe {
+        width: 100%;
+        height: auto;
+        border: none;
+    }
+
+    /* ---------- VÍDEO DE FUNDO ---------- */
+    .caixa-video video {
+        object-fit: cover;
+    }
+
+    /* ---------- SECTION PADDING ---------- */
+    section {
+        padding: 2rem 1rem;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer .list-inline {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .cart-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+
+    footer p,
+    footer a {
+        font-size: 1.3rem;
+    }
+    .caixa-sobre .sobre-container .sobre-imagem,
+    .caixa-sobre .sobre-container .sobre-texto {
+        flex: 1 1 30rem;
+    }
+}
+
+/* Dispositivos muito estreitos (≤ 576 px) */
+@media (max-width: 576px) {
+
+    .caixa-principal div h3 {
+        font-size: 2.8rem;
+    }
+
+    .caixa-principal div p {
+        font-size: 1.4rem;
+    }
+}
+
+

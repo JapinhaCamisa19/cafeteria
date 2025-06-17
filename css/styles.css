@@ -267,7 +267,8 @@ section {
 
 .cart-icon {
     display: flex;
-    margin-left: auto;
+    justify-content: center;
+    align-items: center;
     color: #fff;
 }
 .caixa-produtos {
@@ -395,6 +396,12 @@ section {
         padding: 0.8rem 2rem;
     }
 
+    .cart-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
     /* ---------- TÍTULOS ---------- */
     .titulo {
         font-size: 3rem;
