@@ -326,30 +326,17 @@ section {
 }
 
 
-/* ===============================================================
-   BLOCO DE RESPONSIVIDADE – copie‑e‑cole no final do seu styles.css
-   =============================================================== */
+     /* Ajustes gerais para responsividade */
+ :root {
+     font-size: 10px;
+ }
 
-/* Tablets médios (≤ 992 px) */
-@media (max-width: 992px) {
-
-    /* Espaçamento no cabeçalho */
-    .header section {
-        gap: 2rem;
-    }
+body {
+    overflow-x: hidden;
 }
 
-/* Celulares e tablets pequenos (≤ 768 px) */
+/* Melhorias no cabeçalho responsivo */
 @media (max-width: 768px) {
-
-    /* ---------- HEADER & MENU HAMBÚRGUER ---------- */
-    .menu-toggle {
-        display: block;               /* exibe o ícone ☰ */
-        font-size: 3rem;
-        color: #fff;
-        cursor: pointer;
-    }
-
     .nav-links {
         position: absolute;
         top: 100%;
@@ -358,110 +345,173 @@ section {
         flex-direction: column;
         background: var(--bg);
         overflow: hidden;
-        max-height: 0;                /* menu fechado */
+        max-height: 0;
         transition: max-height 0.5s ease-in-out;
-    }
-
-    .nav-links a {
-        margin: 1rem 0;
-        font-size: 1.5rem;
+        z-index: 999;
     }
 
     .nav-links.active {
-        max-height: 30rem;            /* menu aberto – valor alto p/ caber os links */
+        max-height: 25rem;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 
     .header section {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        gap: 1rem;
-        padding: 1rem 0;
-    }
-
-    /* ---------- HERO ---------- */
-    .caixa-principal {
-        padding-top: 8rem;            /* evita sobrepor o header fixo */
-    }
-
-    .caixa-principal div h3 {
-        font-size: 3.5rem;
-    }
-
-    .caixa-principal div p {
-        font-size: 1.6rem;
-    }
-
-    .botao-link {
-        font-size: 1.5rem;
-        padding: 0.8rem 2rem;
+        padding: 1rem 2rem;
     }
 
     .cart-icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
+        position: absolute;
+        top: 1.2rem;
+        right: 2rem;
     }
-    /* ---------- TÍTULOS ---------- */
-    .titulo {
-        font-size: 3rem;
+}
+
+/* Hero centralizado responsivamente */
+@media (max-width: 768px) {
+    .caixa-principal {
+        justify-content: center;
+        text-align: center;
+        padding-top: 10rem;
     }
 
-    /* ---------- SOBRE ---------- */
+    .caixa-principal div {
+        padding: 0 2rem;
+    }
+}
+
+/* Sobre */
+@media (max-width: 768px) {
     .caixa-sobre .sobre-container {
         flex-direction: column;
+        text-align: center;
     }
 
-    /* ---------- MODAL ENDEREÇO ---------- */
+    .caixa-sobre .sobre-container .sobre-texto {
+        padding: 0 1rem;
+    }
+}
+
+/* Produtos */
+@media (max-width: 768px) {
+    .produtos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Avaliações */
+@media (max-width: 768px) {
+    .avaliacoes-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Modal de Endereço */
+@media (max-width: 768px) {
     .ad {
+        position: fixed;
         top: 50%;
-        left: -55%;
-        transform: translate(-65%, -65%);
-        max-width: 600px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 500px;
     }
 
     .ad iframe {
         width: 100%;
-        height: auto;
-        border: none;
-    }
-
-    /* ---------- VÍDEO DE FUNDO ---------- */
-    .caixa-video video {
-        object-fit: cover;
-    }
-
-    /* ---------- SECTION PADDING ---------- */
-    section {
-         padding: 2rem 1rem;
-     }
-
-    /* ---------- FOOTER ---------- */
-    footer .list-inline {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    footer p,
-    footer a {
-        font-size: 1.3rem;
-    }
-    .caixa-sobre .sobre-container .sobre-imagem,
-    .caixa-sobre .sobre-container .sobre-texto {
-        flex: 1 1 30rem;
+        height: 300px;
     }
 }
 
-/* Dispositivos muito estreitos (≤ 576 px) */
-@media (max-width: 576px) {
-
-    .caixa-principal div h3 {
-        font-size: 2.8rem;
+/* Rodapé */
+@media (max-width: 768px) {
+    footer .container {
+        text-align: center;
     }
 
-    .caixa-principal div p {
-        font-size: 1.4rem;
+    footer .list-inline {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 1rem 0;
     }
+}
+
+.ad {
+    display: none; /* oculto por padrão */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    padding: 1rem;
+    border-radius: 1rem;
+    z-index: 999;
+    width: 90%;
+    max-width: 600px;
+}
+
+.ad iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.mascara-modal {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.mascara-modal.ativa {
+    visibility: visible;
+    opacity: 1;
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    width: 100%;
+}
+
+.logo {
+    height: 6rem;
+}
+
+.espaco-flex {
+    flex-grow: 1;
+}
+
+.icons-topo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.cart-link i {
+    font-size: 2.4rem;
+    color: var(--main-color);
+    transition: color 0.3s;
+}
+
+.cart-link:hover i {
+    color: #fff;
+}
+
+.menu-toggle {
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
 }
 
 

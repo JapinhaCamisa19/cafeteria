@@ -524,6 +524,33 @@ h1, h2 {
         color: #fff;
         cursor: pointer;
     }
+    .icons-topo {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1.5rem;
+    }
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: #000;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .icons-topo {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .icon {
+        height: 24px;
+        cursor: pointer;
+    }
+
 
     .nav-links {
         position: absolute;
@@ -637,6 +664,48 @@ h1, h2 {
     .caixa-principal div p {
         font-size: 1.4rem;
     }
+
+
+}
+
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    width: 100%;
+}
+
+.logo {
+    height: 6rem;
+}
+
+.espaco-flex {
+    flex-grow: 1;
+}
+
+.icons-topo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.cart-link i {
+    font-size: 2.4rem;
+    color: var(--main-color);
+    transition: color 0.3s;
+}
+
+.cart-link:hover i {
+    color: #fff;
+}
+
+.menu-toggle {
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
 }
 
 

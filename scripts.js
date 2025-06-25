@@ -2,14 +2,6 @@
 const modal   = document.querySelector(".ad");
 const mascara = document.querySelector(".mascara-modal");
 
-function mostrarModal() {
-    modal.style.left = "50%";
-    mascara.style.visibility = "visible";
-}
-function esconderModal() {
-    modal.style.left = "-30%";
-    mascara.style.visibility = "hidden";
-}
 
 /* ---------- Menu Responsivo ---------- */
 function toggleMenu() {
@@ -42,3 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "carrinho.html";
     };
 });
+
+function mostrarModal() {
+    document.querySelector('.ad').style.display = 'block';
+    document.querySelector('.mascara-modal').classList.add('ativa');
+}
+
+function esconderModal() {
+    document.querySelector('.ad').style.display = 'none';
+    document.querySelector('.mascara-modal').classList.remove('ativa');
+}
+
+

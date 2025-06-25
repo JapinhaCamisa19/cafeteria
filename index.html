@@ -23,18 +23,26 @@
 
 <!-- Cabeçalho -->
 <header class="header">
-    <section>
-        <a href="index.html"><img src="img/logo.png" alt="Logo cafetiria"></a>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <section class="header-content">
+        <a href="index.html">
+            <img src="img/logo.png" alt="Logo cafetiria" class="logo">
+        </a>
+
+        <div class="espaco-flex"></div>
+
         <nav class="nav-links">
             <a href="#">Home</a>
             <a href="#">Sobre</a>
             <a href="#" onclick="mostrarModal()">Endereço</a>
             <a href="#avaliacoes">Avaliação</a>
         </nav>
-        <div class="cart-icon"><a href="carrinho.html"><i class="bi bi-cart-fill text-white fs-1"></i></a></div>
 
+        <div class="icons-topo">
+            <a href="carrinho.html" class="cart-link"><i class="bi bi-cart-fill"></i></a>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        </div>
     </section>
+
 </header>
 
 <!-- Hero -->
