@@ -2,227 +2,38 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
-    <link rel="shortcut icon" type="image/x-icon" href="img/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Loja - Carrinho</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <style>
-        :root {
-            --main-color: #d3ad7f;
-            --black: #131313;
-            --bg: #010103;
-            --text-light: #eee;
-            --text-dark: #1b1a17;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
-        }
-
-        body {
-            background-color: var(--black);
-            color: var(--text-light);
-            padding: 30px 15px 50px;
-            max-width: 960px;
-            margin: 0 auto;
-            min-height: 100vh;
-            padding-top: 90px;
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: var(--bg);
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            z-index: 1000;
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo img {
-            height: 60px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            color: #fff;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--main-color);
-            border-bottom: 2px solid var(--main-color);
-        }
-
-        .icons-topo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .cart-icon i {
-            font-size: 1.6rem;
-            color: var(--main-color);
-        }
-
-        .menu-toggle {
-            font-size: 2rem;
-            color: #fff;
-            cursor: pointer;
-            display: none;
-        }
-
-        h1 {
-            color: var(--main-color);
-            margin-bottom: 1.5rem;
-        }
-
-        #carrinho {
-            list-style: none;
-            padding: 0;
-            margin: 0 auto 1rem;
-            max-width: 640px;
-            background: #222;
-            border-radius: 10px;
-        }
-
-        #carrinho li {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem;
-            border-bottom: 1px solid #333;
-        }
-
-        #totalCarrinho {
-            font-size: 1.4rem;
-            color: var(--main-color);
-            margin: 1rem 0;
-        }
-
-        #finalizarBtn {
-            display: block;
-            width: 100%;
-            max-width: 640px;
-            margin: 0 auto;
-            padding: 1rem;
-            background: var(--main-color);
-            color: var(--text-dark);
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        #finalizarBtn:hover {
-            background: #b99162;
-        }
-
-        @media (max-width: 768px) {
-            .header-content {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                flex-wrap: nowrap;
-                padding: 1rem 1.2rem;
-            }
-
-            .logo {
-                flex: 1;
-            }
-
-            .nav-links {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                flex-direction: column;
-                background: var(--bg);
-                overflow: hidden;
-                max-height: 0;
-                transition: max-height 0.4s ease-in-out;
-            }
-
-            .nav-links.active {
-                max-height: 300px;
-                padding: 1rem 2rem;
-            }
-
-            .icons-topo {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            .cart-icon i {
-                font-size: 1.5rem;
-                color: var(--main-color);
-            }
-
-            .menu-toggle {
-                font-size: 1.8rem;
-                color: var(--main-color);
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="/css/carrinho.css"> <!-- SEU CSS ORGANIZADO AQUI -->
 </head>
 <body>
 
 <header class="header">
-    <section class="header-content">
-        <a href="index.html" class="logo">
-            <img src="img/logo.png" alt="Logo cafeteria">
-        </a>
-
+    <div class="header-content">
+        <a href="index.html" class="logo"><img src="img/logo.png" alt="Logo"></a>
         <div class="icons-topo">
-            <a href="#" class="cart-icon" aria-label="Carrinho"><i class="bi bi-cart-fill"></i></a>
             <div id="menu-btn" class="menu-toggle" onclick="toggleMenu()">☰</div>
         </div>
-
-        <nav class="nav-links">
+        <nav class="nav-links" id="navMenu">
             <a href="index.html">Home</a>
             <a href="#">Sobre</a>
             <a href="#" onclick="mostrarModal()">Endereço</a>
             <a href="#avaliacoes">Avaliação</a>
         </nav>
-    </section>
+    </div>
 </header>
 
-
-<main style="margin-top: 140px; text-align: center;">
+<main>
     <h1>Cafeteira</h1>
     <ul id="carrinho"></ul>
     <div id="totalCarrinho">Total: R$ 0,00</div>
     <button id="finalizarBtn">Finalizar Compra</button>
 </main>
 
-<script>
-    function toggleMenu() {
-        const nav = document.querySelector('.nav-links');
-        nav.classList.toggle('active');
-    }
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="/carrinho.js"></script>
+
+
 </body>
 </html>
