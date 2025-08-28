@@ -57,9 +57,13 @@
 
 <!-- Sobre -->
 <section class="caixa-sobre" id="sobre">
-    <h2 class="titulo"><span>Sobre</span> Nós</h2>
     <div class="sobre-container">
-        <div class="sobre-imagem"><img src="img/about-img.jpg" alt=""></div>
+        <h2 class="titulo"><span>Sobre</span> Nós</h2>
+
+        <div class="sobre-imagem">
+            <img src="img/about-img.jpg" alt="">
+        </div>
+
         <div class="sobre-texto">
             <h3>O que faz nosso café especial</h3>
             <p>Aqui, cada xícara conta uma história de dedicação e paixão pelo que fazemos. Nosso café começa com a
@@ -69,43 +73,69 @@
             <p>Mas o diferencial vai além do grão. Em cada etapa — da moagem à preparação — colocamos atenção aos
                 detalhes, carinho e respeito por quem vai saborear. O resultado é um café encorpado, com personalidade,
                 que aquece o coração e conquista todos os paladares.
-
                 Mais do que uma bebida, oferecemos uma verdadeira experiência. Porque para nós, café é feito com alma.
-
             </p>
             <a class="botao-link" href="#produtos">Ver produtos</a>
         </div>
     </div>
 </section>
 
+
 <!-- Produtos -->
 <section class="caixa-produtos" id="produtos">
     <h2 class="titulo"><span>Nossos</span> Cafés</h2>
     <div class="produtos-container">
         <div class="produto">
-            <img src="img/menu-4.png" alt="Café Tradicional">
-            <h3>Café Tradicional</h3>
-            <p>250g de puro sabor com torra média.</p>
+            <img src="img/1.png" alt="Café Espresso Intenso">
+            <h3>Café Espresso Intenso</h3>
+            <p>Uma mistura forte e encorpada, perfeita para os amantes de café.</p>
             <span>R$ 19,90</span>
-            <button class="botao-link" onclick="adicionarAoCarrinho('Café Tradicional', 19.9, 'img/menu-4.png')">
+            <button class="botao-link" onclick="adicionarAoCarrinho('Café Espresso Intenso', 19.9, 'img/1.png')">
                 Adicionar ao Carrinho
             </button>
         </div>
         <div class="produto">
-            <img src="img/menu-6.png" alt="Café Gourmet">
-            <h3>Café Gourmet</h3>
-            <p>100% arábica, notas de chocolate.</p>
-            <span>R$ 29,90</span>
-            <button class="botao-link" onclick="adicionarAoCarrinho('Café Gourmet', 29.9, 'img/menu-6.png')">Adicionar
+            <img src="img/2.png" alt="Café Mocha Delicado">
+            <h3>Café Mocha Delicado</h3>
+            <p>Combinação saborosa de chocolate e café, irresistível!</p>
+            <span>R$ 21,90</span>
+            <button class="botao-link" onclick="adicionarAoCarrinho('Café Mocha Delicado', 21.9, 'img/2.png')">Adicionar
                 ao Carrinho
             </button>
         </div>
         <div class="produto">
-            <img src="img/menu-1.png" alt="Café Orgânico">
-            <h3>Café Orgânico</h3>
-            <p>Produzido sem agrotóxicos, com selo.</p>
+            <img src="img/3.png" alt="Café Aromático da Fazenda">
+            <h3>Café Aromático da Fazenda</h3>
+            <p>Grãos selecionados trazem o sabor autêntico do campo</p>
+            <span>R$ 23,90</span>
+            <button class="botao-link" onclick="adicionarAoCarrinho('Café Aromático da Fazenda', 23.9, 'img/3.png')">Adicionar
+                ao Carrinho
+            </button>
+        </div>
+        <div class="produto">
+            <img src="img/4.png" alt="Café Arábica Premium">
+            <h3>Café Arábica Premium</h3>
+            <p>100% Arábica, com notas frutadas e um toque de doçura.</p>
+            <span>R$ 22,90</span>
+            <button class="botao-link" onclick="adicionarAoCarrinho('Café Arábica Premium', 22.9, 'img/4.png')">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+        <div class="produto">
+            <img src="img/7.png" alt="Café Torrefação Artesanal">
+            <h3>Café Torrefação Artesanal</h3>
+            <p>Preparado com técnicas tradicionais, garantindo qualidade.</p>
+            <span>R$ 29,90</span>
+            <button class="botao-link" onclick="adicionarAoCarrinho('Café Torrefação Artesanal', 29.9, 'img/7.png')">Adicionar
+                ao Carrinho
+            </button>
+        </div>
+        <div class="produto">
+            <img src="img/6.png" alt="Café Coado Especial">
+            <h3>Café Coado Especial</h3>
+            <p>Feito à mão, para preservar todos os sabores.</p>
             <span>R$ 24,90</span>
-            <button class="botao-link" onclick="adicionarAoCarrinho('Café Orgânico', 24.9, 'img/menu-1.png')">Adicionar
+            <button class="botao-link" onclick="adicionarAoCarrinho('Café Coado Especial', 24.9, 'img/6.png')">Adicionar
                 ao Carrinho
             </button>
         </div>
@@ -153,7 +183,7 @@
     <div class="container text-center">
         <p>&copy; 2025 Café. Todos os direito reservados</p>
         <ul class="list-inline">
-            <li class="list-inline-item"><a href="#" class="text-light">Privado</a></li>
+            <li class="list-inline-item"><a href="#produtos" class="text-light">Produtos</a></li>
             <li class="list-inline-item"><a href="#" class="text-light">Termos</a></li>
             <li class="list-inline-item"><a href="#" class="text-light">Contato</a></li>
         </ul>

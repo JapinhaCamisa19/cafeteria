@@ -1,5 +1,3 @@
-/* js/carrinho.js ---------------------------------------------
-   Monta lista, controla + / − / remover e finaliza compra. */
 
 document.addEventListener("DOMContentLoaded", () => {
     const ul = document.getElementById("carrinho");
