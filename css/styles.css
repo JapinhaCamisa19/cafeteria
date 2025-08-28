@@ -6,7 +6,6 @@
     --border: 0.1rem solid rgba(255, 255, 255, 0.3);
 }
 
-/* Reset + tipografia */
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +20,6 @@ section {
     max-width: 1200px;
 }
 
-/* Vídeo de fundo */
 .caixa-video {
     position: fixed;
     z-index: -1;
@@ -44,7 +42,6 @@ section {
     background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
 }
 
-/* Cabeçalho */
 .header {
     position: fixed;
     top: 0;
@@ -156,9 +153,27 @@ section {
 .caixa-sobre .sobre-container {
     display: flex;
     align-items: center;
-    background-color: var(--black);
-    gap: 1.5rem;
+    justify-content: center;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a); /* fundo com degradê leve */
+    gap: 3rem;
     flex-wrap: wrap;
+    padding: 4rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+.caixa-sobre .sobre-container .titulo {
+    flex: 1 1 100%;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.caixa-sobre .sobre-container .titulo span {
+    color: var(--main-color);
 }
 
 .caixa-sobre .sobre-container .sobre-imagem,
@@ -168,19 +183,44 @@ section {
 
 .caixa-sobre .sobre-container .sobre-imagem img {
     width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+    transition: transform 0.4s ease;
+}
+
+.caixa-sobre .sobre-container .sobre-imagem img:hover {
+    transform: scale(1.03);
 }
 
 .caixa-sobre .sobre-container .sobre-texto h3 {
-    font-size: 3rem;
+    font-size: 3.2rem;
     color: #fff;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
 }
 
 .caixa-sobre .sobre-container .sobre-texto p {
-    font-size: 1.5rem;
-    font-weight: lighter;
-    color: #fff;
-    line-height: 1.8;
-    padding: 1rem 0;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #ccc;
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.caixa-sobre .sobre-container .sobre-texto .botao-link {
+    margin-top: 2rem;
+    background: var(--main-color);
+    padding: 1rem 3rem;
+    font-size: 1.6rem;
+    border-radius: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.caixa-sobre .sobre-container .sobre-texto .botao-link:hover {
+    background: #fff;
+    color: var(--black);
+    letter-spacing: 0.1rem;
 }
 
 /*.modal{*/
@@ -195,10 +235,10 @@ section {
 /*    transform: translate(-50%, -50%);*/
 /*    transition: left 1s linear;*/
 /*}*/
-.ad{
+.ad {
     display: flex;
     flex-direction: column;
-    background-color:transparent;
+    background-color: transparent;
     gap: 20px;
     z-index: 4;
     position: fixed;
@@ -254,6 +294,8 @@ section {
     border: 2px solid var(--main-color);
 }
 
+
+
 .avaliacao p {
     font-size: 1.5rem;
     font-style: italic;
@@ -271,16 +313,17 @@ section {
     align-items: center;
     color: #fff;
 }
+
 .caixa-produtos {
     background-color: var(--black);
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
     color: #fff;
 }
 
 .produtos-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 4rem;
     justify-content: center;
 }
 
@@ -300,10 +343,24 @@ section {
 }
 
 .produto img {
-    width: 100%;
-    border-radius: 0.5rem;
+    width: 100px;
+    height: 100px; /* Adicionando altura fixada para manter as proporções */
+    border-radius: 50%; /* Mantendo o border-radius para circular */
     margin-bottom: 1rem;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    object-fit: cover;
+    display: block; /* Para evitar espaços ao redor */
+    margin-left: auto; /* Centralizando a imagem */
+    margin-right: auto; /* Centralizando a imagem */
 }
+
+.produto img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.8);
+    filter: brightness(1.05) contrast(1.05);
+}
+
 
 .produto h3 {
     font-size: 2rem;
@@ -326,16 +383,14 @@ section {
 }
 
 
-     /* Ajustes gerais para responsividade */
- :root {
-     font-size: 10px;
- }
+:root {
+    font-size: 10px;
+}
 
 body {
     overflow-x: hidden;
 }
 
-/* Melhorias no cabeçalho responsivo */
 @media (max-width: 768px) {
     .nav-links {
         position: absolute;
@@ -372,7 +427,6 @@ body {
     }
 }
 
-/* Hero centralizado responsivamente */
 @media (max-width: 768px) {
     .caixa-principal {
         justify-content: center;
@@ -385,7 +439,7 @@ body {
     }
 }
 
-/* Sobre */
+
 @media (max-width: 768px) {
     .caixa-sobre .sobre-container {
         flex-direction: column;
@@ -397,7 +451,7 @@ body {
     }
 }
 
-/* Produtos */
+
 @media (max-width: 768px) {
     .produtos-container {
         flex-direction: column;
@@ -405,7 +459,6 @@ body {
     }
 }
 
-/* Avaliações */
 @media (max-width: 768px) {
     .avaliacoes-container {
         flex-direction: column;
@@ -413,7 +466,6 @@ body {
     }
 }
 
-/* Modal de Endereço */
 @media (max-width: 768px) {
     .ad {
         position: fixed;
@@ -430,7 +482,7 @@ body {
     }
 }
 
-/* Rodapé */
+
 @media (max-width: 768px) {
     footer .container {
         text-align: center;
@@ -445,7 +497,7 @@ body {
 }
 
 .ad {
-    display: none; /* oculto por padrão */
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -475,6 +527,7 @@ body {
     visibility: visible;
     opacity: 1;
 }
+
 .header-content {
     display: flex;
     align-items: center;
